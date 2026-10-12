@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="A compact, responsive Tetris game built with vanilla HTML, CSS, and JavaScript.">
+  <title>Tetris</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main>
+    <header class="brand">
+      <div>
+        <p class="eyebrow">Classic arcade</p>
+        <h1>Tetris</h1>
+      </div>
+      <span class="status" id="status" aria-live="polite">Ready</span>
+    </header>
+
+    <section class="app" aria-label="Tetris game">
+      <div class="board-wrap">
+        <canvas id="board" width="300" height="600" aria-label="Tetris board"></canvas>
+        <div class="overlay" id="overlay">
+          <div>
+            <h2 id="overlayTitle">Ready?</h2>
+            <p id="overlayText">Press start or spacebar to play</p>
+          </div>
+        </div>
+      </div>
+
+      <aside class="panel">
+        <div class="stats">
+          <div class="stat"><span>Score</span><strong id="score">0</strong></div>
+          <div class="stat"><span>Lines</span><strong id="lines">0</strong></div>
+          <div class="stat"><span>Level</span><strong id="level">1</strong></div>
+        </div>
+
+        <div class="next-card">
+          <h2>Next piece</h2>
+          <canvas id="next" width="140" height="84" aria-label="Next piece preview"></canvas>
+        </div>
+
+        <div class="actions">
+          <button class="primary" id="start">Start game</button>
+          <button id="pause">Pause</button>
+        </div>
+
+        <div class="touch" aria-label="Touch controls">
+          <button data-action="left" aria-label="Move left">←</button>
+          <button data-action="rotate-counterclockwise" aria-label="Rotate counter-clockwise">↺</button>
+          <button data-action="rotate-clockwise" aria-label="Rotate clockwise">↻</button>
+          <button data-action="right" aria-label="Move right">→</button>
+          <button data-action="drop" aria-label="Hard drop">Drop · Space</button>
+        </div>
+
+        <div class="help">
+          <b>Controls</b><br>
+          ← → move · ↑ clockwise · ↓ counter-clockwise · Space hard drop · P pause
+        </div>
+      </aside>
+    </section>
+  </main>
+</body>
+</html>
